@@ -1,1 +1,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.my-image {
+  display: inline;
+  height: 120px;
+  width: auto;
+}

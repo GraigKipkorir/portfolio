@@ -13,17 +13,39 @@
   </head>
   <body>
     <!-- Header -->
-    <div class="container d-flex p-2 my-5">
+    <div class="container d-flex p-2 my-5 header-own">
       <img
         class="d-inline float-start my-image"
         src="img/craig.png"
         alt="Graig Kipkorir"
       />
-      <div class="container">
-        <h1>Graig Kipkorir</h1>
-        <p class="lead">
-          I am a software developer interested with the web and the internet
-        </p>
+      <div class="container d-flex">
+        <div class="container">
+          <h1>Graig Kipkorir</h1>
+          <a
+            href="mailto:kipkorirgraig24@gmail.com"
+            type="button"
+            class="btn btn-outline-primary"
+          >
+            kipkorirgraig24@gmail.com
+          </a>
+          <p class="lead">
+            I am a software developer interested with the web and the internet
+          </p>
+        </div>
+        <div class="container" style="width: 18rem">
+          <div class="card" style="padding: 20px">
+            <div class="form-check form-switch">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="checkbox"
+                onclick="setDarkMode()"
+              />
+              <label class="form-check-label" for="checkbox">Dark Mode</label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -31,10 +53,20 @@
     <div class="container navigation-section">
       <nav>
         <ul class="nav nav-pills bg-light">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
+          <li class="nav-item">
+            <a class="btn nav-link btn-outline-dark active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn nav-link btn-outline-dark" href="#">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn nav-link btn-outline-dark" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn nav-link btn-outline-dark" href="#contact-me"
+              >Contact Me</a
+            >
+          </li>
         </ul>
       </nav>
     </div>
@@ -163,7 +195,7 @@
       </div>
     </div>
     <!-- Contact -->
-    <div class="container contact">
+    <div class="container contact" id="contact-me">
       <div class="card mb-3">
         <h3 class="">Contact Me</h3>
         <div class="card" style="width: 18rem">
@@ -176,6 +208,28 @@
         </div>
       </div>
     </div>
+    <script>
+      // setDarkMode()
+      if (localStorage.getItem("theme") == "dark") {
+        setDarkMode();
+        if (document.getElementById("checkbox").checked) {
+          localStorage.setItem("checkbox", true);
+        }
+      }
+      function setDarkMode() {
+        let isDark = document.body.classList.toggle("darkmode");
+        if (isDark) {
+          setDarkMode.checked = true;
+          localStorage.setItem("theme", "dark");
+          document
+            .getElementById("checkbox")
+            .setAttribute("checked", "checked");
+        } else {
+          setDarkMode.checked = true;
+          localStorage.removeItem("theme", "dark");
+        }
+      }
+    </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </html>

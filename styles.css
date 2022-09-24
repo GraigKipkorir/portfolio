@@ -1,5 +1,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 body {
+  margin: 0%;
+  border: 0rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .my-image {
